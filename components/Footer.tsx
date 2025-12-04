@@ -1,13 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Twitter, Github, Linkedin, Mail } from 'lucide-react'
+import { Twitter, Linkedin, Mail } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'X' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:info@kaylinco.com', label: 'Email' }
   ]
@@ -34,7 +34,7 @@ export default function Footer() {
             className="md:col-span-2"
           >
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-cyan-500 rounded-full animate-pulse" />
+              <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-pulse" />
               <span className="text-xl font-bold text-gradient font-playfair">
                 Kaylin Co.
               </span>
@@ -51,7 +51,7 @@ export default function Footer() {
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.2, color: '#667eea' }}
+                  whileHover={{ scale: 1.2, color: '#22d3ee' }}
                   className="p-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                 >
                   <social.icon className="w-5 h-5" />
@@ -95,7 +95,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Get In Touch</h3>
             <div className="space-y-3 text-gray-400">
               <p>info@kaylinco.com</p>
-              <p>+263 775775244</p>
+              <p>+263 775775244 / 774898583</p>
+            
             </div>
           </motion.div>
         </div>
@@ -108,7 +109,7 @@ export default function Footer() {
           className="border-t border-white/10 mt-8 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © {currentYear} Kaylin Co. All rights reserved.
+            © {currentYear} Kaylin Co. All rights reserved. Crafted with passion.
           </p>
         </motion.div>
       </div>
