@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
-import { Mail, Phone, MapPin, Send, Loader2, CheckCircle } from 'lucide-react'
+import { Mail, Phone, Send, Loader2, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
 import { useForm as useFormspree, ValidationError } from '@formspree/react'
 
@@ -58,10 +58,9 @@ export default function Contact() {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+263 775775244',
-      href: 'tel:+263 775775244'
-    },
-  
+      value: '+263 775 775 244 / 774 898 583',
+      href: 'tel:+263775775244 / 774898583'
+    }
   ]
 
   // Success State
@@ -71,7 +70,7 @@ export default function Contact() {
         {/* Background */}
         <div className="absolute inset-0">
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-cyan-300/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -101,7 +100,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gradient-cyan"
+              className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-gradient leading-tight"
             >
               Message Sent!
             </motion.h2>
@@ -112,7 +111,7 @@ export default function Contact() {
               transition={{ delay: 0.7 }}
               className="text-xl text-gray-300 max-w-2xl mx-auto mb-8"
             >
-              Thank you for reaching out! We've received your message and will get back to you within 24-48 hours.
+              Thank you for reaching out! We&apos;ve received your message and will get back to you within 24-48 hours.
             </motion.p>
 
             <motion.div
@@ -125,7 +124,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/'}
-                className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-full font-semibold text-white shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-300 rounded-full font-semibold text-white shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300"
               >
                 Back to Home
               </motion.button>
@@ -151,7 +150,7 @@ export default function Contact() {
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-cyan-300/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -161,12 +160,13 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 font-playfair">
-            <span className="text-white">Start Your</span>
-            <span className="text-gradient-cyan block">Journey</span>
+          {/* Fixed Header with proper line height */}
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 font-playfair leading-[1.2]">
+            <span className="text-white block">Start Your</span>
+            <span className="text-gradient block pt-2">Journey</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ready to bring your dreams to life? Let's create something extraordinary together.
+            Ready to bring your dreams to life? Let&apos;s create something extraordinary together.
           </p>
         </motion.div>
 
@@ -177,7 +177,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl font-bold text-white mb-8">Let's Connect</h3>
+            <h3 className="text-3xl font-bold text-white mb-8">Let&apos;s Connect</h3>
             
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
@@ -195,7 +195,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-gray-400 text-sm">{item.label}</div>
-                    <div className="text-white font-semibold group-hover:text-gradient-cyan transition-colors duration-300">
+                    <div className="text-white font-semibold group-hover:text-gradient transition-colors duration-300">
                       {item.value}
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function Contact() {
                 <li>• Free initial consultation</li>
                 <li>• Transparent pricing</li>
                 <li>• Agile development process</li>
-                <li>• Ongoing support & maintenance</li>
+                <li>• Ongoing support &amp; maintenance</li>
                 <li>• 24-48 hour response time</li>
               </ul>
             </motion.div>
@@ -305,14 +305,14 @@ export default function Contact() {
                   </label>
                   <select
                     {...register('budget')}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-500 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-900 border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-500 transition-colors duration-300 [&>option]:bg-gray-900 [&>option]:text-white"
                     disabled={isSubmitting || state.submitting}
                   >
                     <option value="">Select budget</option>
                     <option value="200-500">$200 - $500</option>
                     <option value="500-1000">$500 - $1,000</option>
                     <option value="1000-3000">$1,000 - $3,000</option>
-                    <option value="3000+">$3,000+</option>
+                    <option value="3000-5000">$3,000 - $5,000</option>
                   </select>
                   <ValidationError 
                     prefix="Budget" 
@@ -328,7 +328,7 @@ export default function Contact() {
                   </label>
                   <select
                     {...register('timeline')}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-500 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-900 border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-500 transition-colors duration-300 [&>option]:bg-gray-900 [&>option]:text-white"
                     disabled={isSubmitting || state.submitting}
                   >
                     <option value="">Select timeline</option>
@@ -358,8 +358,8 @@ export default function Contact() {
                   disabled={isSubmitting || state.submitting}
                 />
                 {errors.message && (
-                  <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
-                )}
+                    <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+                  )}
                 <ValidationError 
                   prefix="Message" 
                   field="message"
@@ -373,7 +373,7 @@ export default function Contact() {
                 whileHover={!(isSubmitting || state.submitting) ? { scale: 1.02 } : {}}
                 whileTap={!(isSubmitting || state.submitting) ? { scale: 0.98 } : {}}
                 disabled={isSubmitting || state.submitting}
-                className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white font-semibold py-4 px-8 rounded-xl hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white font-semibold py-4 px-8 rounded-xl hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {(isSubmitting || state.submitting) ? (
                   <>
@@ -402,4 +402,4 @@ export default function Contact() {
       </div>
     </section>
   )
-}
+          }
