@@ -67,10 +67,10 @@ export default function About() {
                 Kaylin Co. emerged from a simple belief: that technology should be as beautiful as it is functional. We bridge the gap between artistic vision and technical execution.
               </p>
               <p className="text-lg leading-relaxed">
-                Our team of award-winning designers and engineers has spent years mastering the art of digital creation. We don't just build websites; we craft immersive experiences that resonate with your audience and drive real results.
+                Our team of award-winning designers and engineers has spent years mastering the art of digital creation. We don&apos;t just build websites; we craft immersive experiences that resonate with your audience and drive real results.
               </p>
               <p className="text-lg leading-relaxed">
-                From startups to Fortune 500 companies, we've helped brands of all sizes transform their digital presence and achieve their wildest dreams.
+                From startups to corporate giants, we&apos;ve helped brands of all sizes transform their digital presence and achieve their wildest dreams.
               </p>
             </div>
           </motion.div>
